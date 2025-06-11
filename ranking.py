@@ -28,7 +28,7 @@ def rankingmenu(ranking):
             case '1':
                 nome = input("Digite o nome do jogador: ")
                 pontuacao = int(input("Digite a pontuação: "))
-                ranking.adicionarAtualizarJogador(nome, pontuacao)
+                ranking.adicionarAtualizarJogador(nome.decode('utf-8'), pontuacao)
             case '2':
                 ranking.top_5()
             case '3':

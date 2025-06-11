@@ -4,6 +4,7 @@
 import redis
 from tarefaremake import Tarefa, tarefamenu
 from ranking import Ranking, rankingmenu
+from contador import ContadorAcessos, contadormenu
 
 r = redis.Redis(
     host='redis-19001.c336.samerica-east1-1.gce.redns.redis-cloud.com',
@@ -18,7 +19,7 @@ r = redis.Redis(
 
 
 
-
+contador = ContadorAcessos(r)
 ranking = Ranking(r)
 tarefas = Tarefa(r)
-rankingmenu(ranking)
+contadormenu(contador)
