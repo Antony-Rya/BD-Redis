@@ -1,4 +1,3 @@
-import redis
 
 class Tarefa:
     def __init__(self, r):
@@ -16,5 +15,36 @@ class Tarefa:
 
     def listar(self):
         return self.redis.lrange('tarefas', 0, -1)
-    
+
+
+menu = True
+def tarefamenu(tarefas):
+    global menu
+    while menu:
+        print('#################')
+        print('1 - Adicionar tarefa')
+        print('2 - Listar tarefas')
+        print('3 - Remover tarefas')
+        print('4 - Sair')
+        print('#################')
+        opcao = input('Digite sua opção... ')
+        match opcao:
+            case '1':
+                print('Digite a descrição da sua tarefa: ')
+                descricao = input()
+                tarefas.adicionar(descricao)
+                print('Tarefa adicionada com sucesso"')
+            case '2':
+                lista = tarefas.listar()
+                print("Tarefas:")
+                for i, item in enumerate(lista):
+                    print(f"{i} - {item}")
+
+            case '3':
+                print('Digite o indice da tarefa que deseja remover: ')
+                index = int(input())
+                tarefas.remover(index)
+            case '4':
+                print('saindo...')
+                menu = False
 
