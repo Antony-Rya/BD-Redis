@@ -1,4 +1,4 @@
-
+from utilidade import limpar_terminal
 class Tarefa:
     def __init__(self, r):
         self.redis = r
@@ -19,8 +19,10 @@ class Tarefa:
 
 menu = True
 def tarefamenu(tarefas):
+
     global menu
     while menu:
+        limpar_terminal()
         print('#################')
         print('1 - Adicionar tarefa')
         print('2 - Listar tarefas')

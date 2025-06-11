@@ -1,3 +1,5 @@
+from utilidade import limpar_terminal
+
 class Ranking:
     def __init__(self, r):
         self.redis = r
@@ -18,6 +20,7 @@ menu = True
 def rankingmenu(ranking):
     global menu
     while menu:
+        limpar_terminal()
         print('################')
         print('1 - Adicionar/Atualizar pontuação')
         print('2 - Mostrar Top 5')

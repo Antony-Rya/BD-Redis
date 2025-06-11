@@ -16,9 +16,6 @@ r = redis.Redis(
 )
 
 
-
-
-
 contador = ContadorAcessos(r)
 ranking = Ranking(r)
 tarefas = Tarefa(r)
